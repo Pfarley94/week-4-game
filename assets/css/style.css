@@ -3,7 +3,23 @@
     width: 830px;
     margin-left: auto;
     margin-right: auto;
-    
-
-   
 }
+
+.getbox{
+    
+    float: left;
+    width:50%;
+    background-color: blue;
+    height: 320px;
+
+}
+
+.me{
+    float: left;
+    width:50%;
+    height: 320px;
+    background-color: green;
+    margin: center;
+
+}
+  
