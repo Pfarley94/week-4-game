@@ -17,63 +17,96 @@
 
     <h1 class="imagesbox">
 
-        <input type="image" id="fire" src="assets/images/firestone.png" height="200" width="200">
+        <img id="fire" src="assets/images/firestone.png" height="200" width="200">
 
-        <input type="image" id="water" src="assets/images/waterstone.png" height="200" width="200">
+        <img id="water" src="assets/images/waterstone.png" height="200" width="200">
 
-        <input type="image" id="thunder" src="assets/images/thunderstone.png" height="200" width="200">
+        <img id="thunder" src="assets/images/thunderstone.png" height="200" width="200">
 
-        <input type="image" id="leaf" src="assets/images/leafstone.png" height="200" width="200">
+        <img id="leaf" src="assets/images/leafstone.png" height="200" width="200">
+    </h1>   
 
+       <div id="container"> 
+            <h3 class="directions">Each stone above has a hidden value, click them until "Your Score" matches the center box's. <br>
+                 Going over will result in a loss.
+            </h3>
 
-    </h1>
-
-    <h1 class="getbox">
-        Number to get
-    </h1>
-
-    <h1 class="me">
-        Your score
-    </h1>
-<script text/javascript>
-
-    $(document).ready(function() {
-
-        var (".imagesbox").on("click", "#fire", function () {
-  
-          // Create a string which will hold the lottery number
-          var lottoNumber = "";
-  
-          // Then initiate a loop to generate 9 separate numbers
-          for (var i = 0; i < 9; i++) {
-  
-            // For each iteration, generate a new random number between 1 and 9.
-            var random = Math.floor(Math.random() * 9) + 1;
-  
-            // Take this number and then add it to the rest of the string.
-            // In essence, we are iteratively building a string of numbers. (e.g. First: 1, Second: 13, Third: 135, etc.)
-            lottoNumber = random + lottoNumber;
-  
-          }
-  
-          // ... and then dump the random number into our random-number div.
-          $("#random-number").prepend("<br><hr>" + lottoNumber);
-  
-        });
-  
-      });
+            <h3 class="number-to-get">Number to get </h3>
+            <h3 class="me"> Your score</h3>
+        </div>
 
 
 
 
+        <!-- JS begins -->
+
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+        <script type="text/javascript">
+            var targetNumber = Math.floor((Math.random() * 200) + 1);
+
+            $(".number-to-get").text(targetNumber);
+
+            var counter = 0;
+            $(".imagesbox").on("click", "#fire", function () {
+
+                counter += 10;
 
 
+                $(".me").text(counter);
 
-    </script>
+                if (counter === targetNumber) {
+                    alert("WINNER");
+                } else if (counter >= targetNumber) {
+                    alert("LOSER");
+                }
+
+                console.log("clicked")
+            });
+            $(".imagesbox").on("click", "#water", function () {
+
+                counter += 5;
 
 
+                $(".me").text(counter);
+
+                if (counter === targetNumber) {
+                    alert("WINNER");
+                } else if (counter >= targetNumber) {
+                    alert("LOSER");
+                }
+
+                console.log("clicked")
+            });
+            $(".imagesbox").on("click", "#thunder", function () {
+
+                counter += 2;
 
 
+                $(".me").text(counter);
+
+                if (counter === targetNumber) {
+                    alert("WINNER");
+                } else if (counter >= targetNumber) {
+                    alert("LOSER");
+                }
+
+                console.log("clicked")
+            });
+            $(".imagesbox").on("click", "#leaf", function () {
+
+                counter += 1;
 
 
+                $(".me").text(counter);
+
+                if (counter === targetNumber) {
+                    alert("WINNER");
+                } else if (counter >= targetNumber) {
+                    alert("LOSER");
+                }
+
+                console.log("clicked")
+            });
+        </script>
 </html>

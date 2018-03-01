@@ -5,21 +5,34 @@
     margin-right: auto;
 }
 
-.getbox{
+.number-to-get{
     
-    float: left;
-    width:50%;
-    background-color: blue;
-    height: 320px;
+    
+    width:75%;
+    background-color: lightblue;
+    height:50px;
+    text-align: center;
 
 }
 
 .me{
-    float: left;
-    width:50%;
-    height: 320px;
-    background-color: green;
+    
+    width:75%;
+    height:50px;
+    background-color: lightgreen;
     margin: center;
-
+    text-align: center;
 }
-  
+.directions{
+    
+    width:75%;
+    height:50px;
+    background-color: lightpink;
+    margin: center;
+    font-weight: 200;
+    text-align: center;
+    
+}
+#container{
+    Margin-left: 20%
+}
